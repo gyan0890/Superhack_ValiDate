@@ -1,0 +1,9 @@
+1,1,2,main.out
+2,2,2,main.ageLimit
+3,3,2,main.age
+4,4,1,main.equalTo.out
+5,-1,1,main.equalTo.in[0]
+6,-1,1,main.equalTo.in[1]
+7,-1,0,main.equalTo.isz.out
+8,-1,0,main.equalTo.isz.in
+9,5,0,main.equalTo.isz.inv
