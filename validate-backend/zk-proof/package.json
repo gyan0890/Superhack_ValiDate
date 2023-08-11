@@ -1,0 +1,14 @@
+{
+  "name": "zk-proof",
+  "version": "1.0.0",
+  "description": "\"zk proof generation using snarkjs\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gyanlakshmi@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
+}
