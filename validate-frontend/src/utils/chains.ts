@@ -60,8 +60,20 @@ export const mumbaiChain: Chain = {
   faucetUrl: 'https://mumbaifaucet.com/'
 }
 
-const chains: Chain[] = [gnosisChain, goerliChain, mainnetChain, mumbaiChain, polygonChain]
+export const optimismGoerli: Chain = {
+  id: '0x1a4',
+  token: 'ETH',
+  shortName: 'ETH',
+  label: 'Optimism Goerli',
+  rpcUrl: 'https://goerli.optimism.io/',
+  blockExplorerUrl: 'https://goerli-optimism.etherscan.io',
+  color: '#8248E5',
+  isStripePaymentsEnabled: true,
+  faucetUrl: 'https://app.optimism.io/faucet/'
+}
 
-export const initialChain = mumbaiChain
+const chains: Chain[] = [gnosisChain, goerliChain, mainnetChain, mumbaiChain, polygonChain, optimismGoerli]
+
+export const initialChain = optimismGoerli
 
 export default chains
