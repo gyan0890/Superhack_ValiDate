@@ -7,9 +7,6 @@ const AuthKitDemo = () => {
 
   return (
     <>
-      {/* Auth Demo */}
-      <p>Interactive demo</p>
-
       {isAuthenticated ? (
         <div>
           {/* safe Account */}
@@ -26,10 +23,13 @@ const AuthKitDemo = () => {
           </div>
         </div>
       ) : (
-        <div>
-          <p>Create a safe using the Auth Kit</p>
-
-          <button onClick={loginWeb3Auth}>Connect</button>
+        <div className="mt-6 flex items-center gap-x-6">
+          <button
+            onClick={loginWeb3Auth}
+            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Connect Wallet
+          </button>
         </div>
       )}
     </>

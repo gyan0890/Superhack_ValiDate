@@ -24,13 +24,13 @@ const AddressLabel = ({
 
   return (
     <div>
-      <span>{addressLabel}</span>
+      <span className="text-sm font-semibold leading-6 text-gray-900">{addressLabel}</span>
 
-      {showBlockExplorerLink && blockExplorerLink && (
+      {/* {showBlockExplorerLink && blockExplorerLink && (
         <a href={blockExplorerLink} target="_blank" rel="noopener">
           Explorer
         </a>
-      )}
+      )} */}
     </div>
   );
 };
