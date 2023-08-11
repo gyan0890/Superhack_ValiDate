@@ -12,14 +12,9 @@ function ConnectedWalletLabel() {
 
   return (
     <div>
-      <div>
-        {ownerAddress && (
-          <AddressLabel address={ownerAddress} showBlockExplorerLink />
-        )}
-      </div>
-
-      {/* logout button */}
-      <button onClick={logoutWeb3Auth}>Logout</button>
+      {ownerAddress && (
+        <AddressLabel address={ownerAddress} showBlockExplorerLink />
+      )}
     </div>
   );
 }

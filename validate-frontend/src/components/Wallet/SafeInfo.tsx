@@ -70,23 +70,23 @@ function SafeInfo({ safeAddress, chainId }: SafeInfoProps) {
 
       <div>
         {/* Safe address label */}
-        <p>
+        <p className='flex'>
+          <span className='pr-2'>Safe ID</span>
           <AddressLabel address={safeAddress} showBlockExplorerLink />
         </p>
 
         {isLoading && <p>Loding.....</p>}
 
-        {!isDeployed && !isDeployLoading && (
+        {/* {!isDeployed && !isDeployLoading && (
           <div>
             <p>
               Creation pending
             </p>
           </div>
-        )}
+        )} */}
 
-        {!isLoading && (
+        {/* {!isLoading && (
           <div>
-            {/* Safe Balance */}
             <p>
               <AmountLabel
                 amount={utils.formatEther(safeBalance || '0')}
@@ -94,7 +94,7 @@ function SafeInfo({ safeAddress, chainId }: SafeInfoProps) {
               />
             </p>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   )
