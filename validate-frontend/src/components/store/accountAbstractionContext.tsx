@@ -157,7 +157,6 @@ const AccountAbstractionProvider = ({ children }: { children: JSX.Element }) => 
         setSafes(safes || [])
         setWeb3Provider(new ethers.providers.Web3Provider(provider))
         setWeb3AuthModalPack(web3AuthModalPack)
-        router.push("/profile");
       }
     } catch (error) {
       console.log('error: ', error)

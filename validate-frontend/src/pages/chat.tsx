@@ -1,10 +1,10 @@
 import Talk from "talkjs";
 import { useEffect, useState, useRef } from "react";
-import { useAccountAbstraction } from "../store/accountAbstractionContext";
 import { useRouter } from "next/router";
-import LeftHeader from "./LeftHeader";
-import ChatMessages from "./ChatMessages";
-import { useUserData } from "../UserContext";
+import { useUserData } from "@/components/UserContext";
+import { useAccountAbstraction } from "@/components/store/accountAbstractionContext";
+import LeftHeader from "@/components/Chat/LeftHeader";
+import ChatMessages from "@/components/Chat/ChatMessages";
 
 function Chat() {
   const { ownerAddress } = useAccountAbstraction();

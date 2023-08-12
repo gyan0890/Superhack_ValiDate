@@ -4,6 +4,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useAccountAbstraction } from "../components/store/accountAbstractionContext";
 import ConnectedWalletLabel from "../components/Wallet/ConnectedWalletLabel";
 import SafeInfo from "../components/Wallet/SafeInfo";
+import Link from "next/link";
 
 export default function Header() {
   const {
@@ -16,7 +17,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="absolute inset-x-0 top-0 max-w-7xl mx-auto">
+    <header className="absolute inset-x-0 top-0 max-w-7xl mx-auto z-50">
       <nav
         className="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -58,6 +59,7 @@ export default function Header() {
           )}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <Link href="/membership" className="pr-3">Membership</Link>
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
@@ -108,6 +110,7 @@ export default function Header() {
                 )}
               </div>
               <div className="py-6">
+                <Link href="/membership">Membership</Link>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
