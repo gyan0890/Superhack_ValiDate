@@ -31,6 +31,10 @@ function Verify() {
     VALIDATE_ADDRESS[chain.id]
   );
 
+  useEffect(() => {
+    !ownerAddress && router.push("/");
+  }, [ownerAddress]);
+
   const fetUsers = async () => {
     const getAllUsers = await valiDateContract.methods.getAllProfiles().call();
     const ifUserExists = getAllUsers.filter(

@@ -4,9 +4,11 @@ import Web3 from "web3";
 import { useAccountAbstraction } from "@/components/store/accountAbstractionContext";
 import ValiDateAbi from "../artifacts/ValiDateAbi.json";
 import { VALIDATE_ADDRESS } from "@/utils/constants";
+import { useRouter } from "next/router";
 
 function Profile() {
   const { web3Provider, ownerAddress, chain }: any = useAccountAbstraction();
+  const router: any = useRouter();
   const web3 = new Web3(web3Provider?.provider);
   const [allUser, setAllUsers] = useState<any>([]);
   const [currentIndex, setCurrentIndex] = useState(allUser.length - 1);
@@ -14,6 +16,10 @@ function Profile() {
   const [dateExists, setDateExists] = useState<any>();
   // used for outOfFrame closure
   const currentIndexRef = useRef(currentIndex);
+
+  useEffect(() => {
+    !ownerAddress && router.push("/");
+  }, [ownerAddress]);
 
   useEffect(() => {
     setCurrentIndex(allUser.length - 1);
