@@ -24,37 +24,25 @@ export const goerliChain: Chain = {
   isStripePaymentsEnabled: false
 }
 
-export const mainnetChain: Chain = {
-  id: '0x1',
+export const modeChain: Chain = {
+  id: '0x397',
   token: 'ETH',
-  label: 'Ethereum',
-  shortName: 'eth',
-  rpcUrl: 'https://cloudflare-eth.com',
-  blockExplorerUrl: 'https://etherscan.io',
+  label: 'Mode Testnet',
+  shortName: 'ETH',
+  rpcUrl: 'https://sepolia.mode.network',
+  blockExplorerUrl: 'https://sepolia.explorer.mode.network',
   color: '#DDDDDD',
-  transactionServiceUrl: 'https://safe-transaction-mainnet.safe.global',
-  isStripePaymentsEnabled: false
+  isStripePaymentsEnabled: true,
+  faucetUrl: ''
 }
 
-export const polygonChain: Chain = {
-  id: '0x89',
-  token: 'matic',
-  shortName: 'matic',
-  label: 'Polygon',
-  rpcUrl: 'https://polygon-rpc.com',
-  blockExplorerUrl: 'https://polygonscan.com',
-  color: '#8248E5',
-  transactionServiceUrl: 'https://safe-transaction-polygon.safe.global',
-  isStripePaymentsEnabled: false
-}
-
-export const mumbaiChain: Chain = {
-  id: '0x13881',
-  token: 'matic',
-  shortName: 'matic',
-  label: 'Mumbai',
-  rpcUrl: 'https://rpc-mumbai.maticvigil.com/',
-  blockExplorerUrl: 'https://mumbai.polygonscan.com',
+export const baseGoerli: Chain = {
+  id: '0x14a33',
+  token: 'ETH',
+  shortName: 'ETH',
+  label: 'Base Goerli',
+  rpcUrl: 'https://base-goerli.public.blastapi.io',
+  blockExplorerUrl: 'https://goerli.basescan.org',
   color: '#8248E5',
   isStripePaymentsEnabled: true,
   faucetUrl: 'https://mumbaifaucet.com/'
@@ -69,10 +57,10 @@ export const optimismGoerli: Chain = {
   blockExplorerUrl: 'https://goerli-optimism.etherscan.io',
   color: '#8248E5',
   isStripePaymentsEnabled: true,
-  faucetUrl: 'https://app.optimism.io/faucet/'
+  faucetUrl: 'https://faucet.quicknode.com/base/goerli'
 }
 
-const chains: Chain[] = [gnosisChain, goerliChain, mainnetChain, mumbaiChain, polygonChain, optimismGoerli]
+const chains: Chain[] = [gnosisChain, goerliChain, modeChain, baseGoerli, optimismGoerli]
 
 export const initialChain = optimismGoerli
 
