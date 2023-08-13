@@ -5,6 +5,7 @@ import { useAccountAbstraction } from "../components/store/accountAbstractionCon
 import ConnectedWalletLabel from "../components/Wallet/ConnectedWalletLabel";
 import SafeInfo from "../components/Wallet/SafeInfo";
 import Link from "next/link";
+import AuthKitDemo from "./AuthKitDemo";
 
 export default function Header() {
   const {
@@ -17,7 +18,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="absolute inset-x-0 top-0 max-w-7xl mx-auto">
+    <header className="absolute inset-x-0 top-0 max-w-7xl mx-auto z-50">
       <nav
         className="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -27,7 +28,7 @@ export default function Header() {
             <span className="sr-only">Your Company</span>
             <img
               className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+              src="logo.svg"
               alt=""
             />
           </Link>
@@ -49,6 +50,8 @@ export default function Header() {
                 <SafeInfo safeAddress={safeSelected} chainId={chainId} />
               )}
               <ConnectedWalletLabel />
+              <Link href="/profile">Profile</Link>
+              <Link href="/chat">Chat</Link>
               <button
                 className="text-sm font-semibold leading-6 text-gray-900"
                 onClick={logoutWeb3Auth}
@@ -58,11 +61,15 @@ export default function Header() {
             </>
           )}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center">
           <Link href="/membership" className="pr-3">Membership</Link>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          {!isAuthenticated && <div className="flex items-center gap-x-6">
+          <button
+            onClick={loginWeb3Auth}
+            className="rounded-full bg-red-500 px-3.5 py-2.5 text-sm font-krona text-white shadow-sm hover:bg-red-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
+          >
+            Connect Wallet
+          </button></div>}
         </div>
       </nav>
       <Dialog
