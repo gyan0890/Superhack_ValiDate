@@ -12,15 +12,15 @@ const AuthKitDemo = () => {
   const { allUser } = useUserData();
 
   useEffect(() => {
-    if (isAuthenticated) {
+    if (isAuthenticated && allUser) {
       const userExists = allUser.filter(
         (item: { id: string | undefined }) => item.id === ownerAddress
       );
       userExists.length
-        ? router.push("/chat", null, { shallow: true })
+        ? router.push("/profile", null, { shallow: true })
         : router.push("/verify", null, { shallow: true });
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, allUser]);
 
   return (
     <>

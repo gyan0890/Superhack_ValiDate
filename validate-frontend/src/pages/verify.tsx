@@ -6,10 +6,11 @@ import { useAccountAbstraction } from "@/components/store/accountAbstractionCont
 import ValiDateAbi from "../artifacts/ValiDateAbi.json";
 import { useRouter } from "next/router";
 import Document from "./_document";
+import { VALIDATE_ADDRESS } from "@/utils/constants";
 const snarkjs = require("snarkjs");
 
 function Verify() {
-  const { web3Provider, ownerAddress }: any = useAccountAbstraction();
+  const { web3Provider, ownerAddress, safeSelected, chain }: any = useAccountAbstraction();
   const router: any = useRouter();
   const [worlIdProof, setWorlIdProof] = useState<any>();
   const [userAge, setUserAge] = useState<any>();
@@ -25,9 +26,9 @@ function Verify() {
   const web3 = new Web3(web3Provider?.provider);
   const worlId: any = process.env.NEXT_PUBLIC_WORLD_COIN_ID;
 
-  const valiDateContract: any = new web3.eth.Contract(
+  const valiDateContract: any = chain.id && new web3.eth.Contract(
     ValiDateAbi,
-    "0xdE2272a67908a9B9249B34FF360d97822A11Bad5"
+    VALIDATE_ADDRESS[chain.id]
   );
 
   const fetUsers = async () => {
@@ -35,7 +36,7 @@ function Verify() {
     const ifUserExists = getAllUsers.filter(
       (item: any) => item === ownerAddress
     );
-    ifUserExists.length && router.push("/profile", null, { shallow: true });
+    ifUserExists.length && router.push("/chat", null, { shallow: true });
   };
 
   useEffect(() => {
