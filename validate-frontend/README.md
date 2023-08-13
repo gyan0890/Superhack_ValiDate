@@ -1,4 +1,5 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+ValiDate: A project created to help refine the world of dating to find trustworthy partners.
+This project's front end uses NextJS, a common Javascript Front End library.
 
 ## Getting Started
 
