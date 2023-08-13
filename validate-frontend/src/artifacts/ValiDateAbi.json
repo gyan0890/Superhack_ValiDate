@@ -1,0 +1,352 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_safeId",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_gender",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "_isGenderVerified",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_age",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_isAgeVerified",
+				"type": "bool"
+			},
+			{
+				"internalType": "string",
+				"name": "_interests",
+				"type": "string"
+			}
+		],
+		"name": "createProfile",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_userAddress",
+				"type": "address"
+			}
+		],
+		"name": "deActivateProfile",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getAllProfiles",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getProfilePerUser",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "safeId",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "gender",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isGenderVerified",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "age",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isAgeVerified",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "interests",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timeOfCreation",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isMember",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct Validate.User",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getUserChats",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "onGoingChats",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "nftAddress",
+				"type": "address"
+			}
+		],
+		"name": "setMembershipNftAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_userAddress",
+				"type": "address"
+			}
+		],
+		"name": "updateMembership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_safeId",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_gender",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "_isGenderVerified",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_age",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_isAgeVerified",
+				"type": "bool"
+			},
+			{
+				"internalType": "string",
+				"name": "_interests",
+				"type": "string"
+			}
+		],
+		"name": "updateProfile",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_user1",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_user2",
+				"type": "address"
+			}
+		],
+		"name": "userChatMapping",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "userMapping",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "isActive",
+				"type": "bool"
+			},
+			{
+				"internalType": "address",
+				"name": "safeId",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "gender",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "isGenderVerified",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "age",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "isAgeVerified",
+				"type": "bool"
+			},
+			{
+				"internalType": "string",
+				"name": "interests",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "timeOfCreation",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "isMember",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "users",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
