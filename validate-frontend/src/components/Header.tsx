@@ -5,6 +5,7 @@ import { useAccountAbstraction } from "../components/store/accountAbstractionCon
 import ConnectedWalletLabel from "../components/Wallet/ConnectedWalletLabel";
 import SafeInfo from "../components/Wallet/SafeInfo";
 import Link from "next/link";
+import AuthKitDemo from "./AuthKitDemo";
 
 export default function Header() {
   const {
@@ -17,20 +18,20 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="absolute inset-x-0 top-0 max-w-7xl mx-auto">
+    <header className="absolute inset-x-0 top-0 max-w-7xl mx-auto z-50">
       <nav
         className="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
+          <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img
               className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+              src="logo.svg"
               alt=""
             />
-          </Link>
+          </a>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -58,11 +59,9 @@ export default function Header() {
             </>
           )}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center">
           <Link href="/membership" className="pr-3">Membership</Link>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          <AuthKitDemo />
         </div>
       </nav>
       <Dialog

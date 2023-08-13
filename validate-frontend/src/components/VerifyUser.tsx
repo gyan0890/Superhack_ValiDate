@@ -1,21 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { IDKitWidget, ISuccessResult } from "@worldcoin/idkit";
 import { UserCircleIcon } from "@heroicons/react/24/solid";
-import { useUserData } from "@/components/UserContext";
+import { useUserData } from "./UserContext";
 
 function Verify() {
-  const [proof, setProof] = useState<any>();
+  const [proof, setProof] = useState<ISuccessResult | null>(null);
   const { handleActiveComponent, activeComponent } = useUserData();
-  const worlId: any = process.env.NEXT_PUBLIC_WORLD_COIN_ID;
 
-  useEffect(() => {
-    console.log("proof", proof);
-  }, [proof])
-  
-  const getUserChoice = (userId: any) => {
-	const choice = userId
-	return choice
-}
   return (
     <div className="relative isolate mt-40 max-w-xl mx-auto border border-gray-500 rounded-xl">
       <div className="space-y-12 p-6">
@@ -33,17 +24,8 @@ function Verify() {
               </label>
               <div className="mt-2">
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                <IDKitWidget
-                    app_id={worlId}
-                    action={getUserChoice("hey")}
-                    onSuccess={() => setProof("done validatr")}
-                >  
-                    {({ open }) => <button onClick={open} className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
-                        Verify you are human
-                    </button>}
-                </IDKitWidget>
-                  {/* <IDKitWidget
-                    app_id={worlId} // obtained from the Developer Portal
+                  <IDKitWidget
+                    app_id="app_staging_48fcc37929d20a528215ecba36ca6633" // obtained from the Developer Portal
                     action="vote_1" // this is your action name from the Developer Portal
                     onSuccess={setProof} // callback when the modal is closed
                     // handleVerify={handleVerify} // optional callback when the proof is received
@@ -53,7 +35,7 @@ function Verify() {
                     {({ open }) => <button onClick={open} className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                       Verify you are human
                     </button>}
-                  </IDKitWidget> */}
+                  </IDKitWidget>
                 </div>
               </div>
               <div className="mt-2">

@@ -6,9 +6,6 @@ import React, {
   useCallback,
 } from "react";
 import { useAccountAbstraction } from "./store/accountAbstractionContext";
-import Web3 from "web3";
-import ValiDateAbi from "../artifacts/ValiDateAbi.json";
-import { VALIDATE_ADDRESS } from "@/utils/constants";
 
 const UserData = [
     {
@@ -34,24 +31,21 @@ const UserData = [
 type Props = object;
 export const UserContext = createContext<any>(null);
 const AppContext: React.FC<Props> = ({ children }: any) => {
-  const { web3Provider, ownerAddress, chain }: any = useAccountAbstraction();
-  const web3: any = new Web3(web3Provider?.provider);
-  const [allUser, setAllUser] = useState<any>();
+  const { ownerAddress } = useAccountAbstraction();
+  const [allUser, setAllUser] = useState(UserData);
+  const [ownerUser, setOwnweUser] = useState<any>();
+  const [activeUser, setActiveUser] = useState<any>();
   const [activeComponent, setActiveComponent] = useState();
 
-  const valiDateContract: any = chain.id && new web3.eth.Contract(
-    ValiDateAbi,
-    VALIDATE_ADDRESS[chain.id]
-  );
-
-  const fetUsers = async () => {
-    const allUsersData = await valiDateContract.methods.getAllProfiles().call();
-    setAllUser(allUsersData)
-  };
-
   useEffect(() => {
-    ownerAddress && fetUsers();
-  }, [ownerAddress]);
+    const data = UserData.filter(item => item.id === ownerAddress)
+    setOwnweUser(data[0])
+  }, [ownerAddress])
+
+  const handleActiveUser = (address: any) => {    
+    const data = UserData.filter(item => item.id === address)
+    setActiveUser(data[0])
+  }
 
   const handleActiveComponent = (text: any) => {
     setActiveComponent(text)
@@ -62,9 +56,12 @@ const AppContext: React.FC<Props> = ({ children }: any) => {
       value={{
         allUser,
         setAllUser,
+        ownerUser,
+        setOwnweUser,
+        handleActiveUser,
+        activeUser,
         handleActiveComponent,
-        activeComponent,
-        valiDateContract
+        activeComponent
       }}
     >
       {children}

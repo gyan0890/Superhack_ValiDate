@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   MagnifyingGlassIcon,
   ChatBubbleLeftEllipsisIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const LeftHeader = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
   return (
     <>
       <div className="relative bg-ohji-lightBlue h-[20%]">
@@ -16,19 +13,15 @@ const LeftHeader = () => {
           <div>
             <img
               className="object-cover w-10 h-10 rounded-full"
-              src="https://xsgames.co/randomusers/assets/avatars/pixel/1.jpg"
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fGh1bWFufGVufDB8fDB8fA%3D%3D&w=1000&q=80"
               alt="username"
             />
           </div>
-        
-          {/* <div className="inline-flex space-x-4">
-            <button>
-              <UserGroupIcon className="h-6 w-6 text-black" />
-            </button>
-            <button>
-              <ChatBubbleLeftEllipsisIcon className="h-6 w-6 text-black" />
-            </button>
-          </div> */}
+          <div className="inline-flex space-x-4">
+            <UserGroupIcon className="h-6 w-6 text-white" />
+            <ChatBubbleLeftEllipsisIcon className="h-6 w-6 text-white" />
+            <MagnifyingGlassIcon className="h-6 w-6 text-white" />
+          </div>
         </div>
       </div>
     </>

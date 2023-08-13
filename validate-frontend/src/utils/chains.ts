@@ -1,4 +1,4 @@
-import Chain from '../hooks/chain';
+ import Chain from '../hooks/chain';
 
 export const gnosisChain: Chain = {
   id: '0x64',
